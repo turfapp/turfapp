@@ -157,10 +157,6 @@ $mobile-menu-bar-height: 50px;
         }
     }
 
-    #app {
-        height: calc(100% - #{$mobile-menu-bar-height}) !important;
-    }
-
     #main {
         margin-left: 0;
     }
