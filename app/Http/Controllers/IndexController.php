@@ -56,6 +56,6 @@ class IndexController extends Controller
      */
     public function view(): View
     {
-        return $this->viewFactory->make('web.index');
+        return $this->viewFactory->make('web.front.index');
     }
 }
