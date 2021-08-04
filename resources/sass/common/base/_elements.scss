@@ -1,0 +1,24 @@
+html,
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: $c-txt-black;
+    background-color: $c-bg-dimmer;
+}
+
+a {
+    color: $c-blue;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@media (pointer: none), (pointer: coarse) {
+    body {
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}

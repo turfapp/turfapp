@@ -1,0 +1,85 @@
+#turf-overview {
+    $row-height: 40px;
+    $controls-width: 100px;
+    $control-button-width: 20px;
+
+    width: 100%;
+
+    .row {
+        border-bottom: 1px solid #cccccc;
+        font-size: 1.25em;
+        height: $row-height;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        display: block;
+        line-height: $row-height;
+        padding: 15px 0;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+
+    .name,
+    .controls,
+    .controls * {
+        display: inline-block;
+    }
+
+    .name {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        box-sizing: border-box;
+        padding-right: 10px;
+        width: calc(100% - #{$controls-width});
+    }
+
+    .controls {
+        float: right;
+        white-space: nowrap;
+        height: 100%;
+        width: $controls-width;
+        text-align: center;
+    }
+
+    .amount {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0 5px;
+        box-sizing: border-box;
+        width: $controls-width - 2 * $control-button-width;
+    }
+
+    .inline-awards {
+        padding-left: 5px;
+        display: inline-block;
+
+        .award {
+            display: inline-block;
+            padding-right: 5px;
+        }
+    }
+
+    .increment,
+    .decrement {
+        cursor: pointer;
+        width: $control-button-width;
+    }
+
+    .increment {
+        float: right;
+    }
+
+    .decrement {
+        float: left;
+    }
+}

@@ -1,0 +1,154 @@
+$header-height: 56px;
+
+::selection {
+    background: #ffb7b7;
+}
+
+::-moz-selection {
+    background: #ffb7b7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    border: 0;
+    background-color: white;
+    border-radius: 9px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #555555;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: border-radius 0.33s;
+}
+
+button:hover {
+    border-radius: 50px;
+}
+
+.header {
+    height: $header-height;
+    background-color: white;
+    width: 100%;
+    z-index: 9999;
+
+    .inner-header {
+        max-width: 908px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        font-size: 1.75em;
+        line-height: $header-height;
+        color: $c-txt-black;
+        margin-left: 10px;
+    }
+}
+
+.wrapper {
+    width: 100%;
+
+    .container {
+        height: 100vh;
+        min-height: 550px;
+        color: white;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &:nth-child(1) {
+            background-color: white;
+            color: black;
+
+            button {
+                background-color: black;
+                color: white;
+            }
+        }
+
+        &:nth-child(2) {
+            background-color: #565be5;
+        }
+
+        &:nth-child(3) {
+            background-color: #d61759;
+        }
+
+        &:nth-child(4) {
+            background-color: #6441A4;
+        }
+    }
+}
+
+.inner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 96px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.content-wrapper {
+    width: 50%;
+    padding-right: 100px;
+}
+
+.image-wrapper {
+    width: 50%;
+}
+
+.image-wrapper img {
+    width: 100%;
+}
+
+.title p {
+    font-size: 2.2em;
+    letter-spacing: 0.04em;
+    font-family: "Unisans", sans-serif;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.content p {
+    font-size: 1.1em;
+}
+
+.footer {
+    position: absolute;
+    z-index: 9999;
+    bottom: 25px;
+    left: 25px;
+    font-size: 0.8em;
+}
+
+.plainlink {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media (max-width: 890px) {
+    .content-wrapper {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .image-wrapper {
+        display: none;
+    }
+}

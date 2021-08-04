@@ -1,0 +1,25 @@
+.empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    color: darken($c-bg-dimmer, 25%);
+
+    i {
+        font-size: 4em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

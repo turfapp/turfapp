@@ -1,0 +1,96 @@
+$member-button-height: 30px;
+$member-button-background-color: #f0f0f0;
+
+.member-buttons {
+    list-style: none;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    margin: 0;
+    border: 1px solid #d9d9d9;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.member-buttons li {
+    display: block;
+    float: left;
+    margin: 0;
+    background-color: $member-button-background-color;
+    width: 30px;
+    height: $member-button-height;
+    text-align: center;
+    padding: 0;
+    border-right-width: 1px;
+    border-right-color: #d9d9d9;
+    border-right-style: solid;
+
+    &:last-child {
+        border-right-width: 0;
+    }
+
+    a {
+        display: block;
+        color: $c-txt-grey;
+        font-weight: bold;
+        line-height: $member-button-height;
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+            background-color: lighten($member-button-background-color, 2.5%);
+            text-decoration: none;
+        }
+    }
+}
+
+.trophies {
+    max-width: 50%;
+    margin-top: 10px;
+
+    p {
+        margin: 0 5px 0 0;
+        display: inline-block;
+        border-radius: 3px;
+        border: 1px solid #aaaaaa;
+        color: #aaaaaa;
+        padding: 4px;
+        line-height: 100%;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.member-awards {
+    position: absolute;
+    top: 15px; right: 15px;
+    font-size: 2.25em;
+    line-height: 100%;
+}
+
+.member-header {
+    min-height: 85px;
+}
+
+@media screen and (max-width: 800px) {
+    .member-buttons {
+        position: relative;
+        top: 0; right: 0;
+        display: table;
+        margin-top: 10px;
+    }
+
+    .member-awards {
+        position: relative;
+        top: 0; right: 0;
+        margin-top: 5px;
+        font-size: 1.75em;
+    }
+
+    .member-header {
+        min-height: initial;
+    }
+}
