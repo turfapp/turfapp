@@ -9,7 +9,8 @@
 @endsection
 
 @section('body')
-    <div class="wrapper">
-        @yield('app')
+    @include('web.front._layout.header')
+    <div id="content" @stack('app-data')>
+        @yield('content')
     </div>
 @endsection

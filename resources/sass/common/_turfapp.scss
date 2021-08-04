@@ -9,6 +9,7 @@ $c-bg-dimmest: darken($c-bg-page, 15%);
 $c-txt-black: #050505;
 $c-txt-grey: #5c5c5c;
 $c-txt-white: #ffffff;
+$c-txt-purple: #4B0082;
 
 $c-bad: #D8000C;
 $c-good: #4F8A10;
@@ -27,3 +28,4 @@ $c-neutral: #9F6000;
 @import "component/form";
 @import "component/logo";
 @import "component/sidebar";
+@import "component/frontheader";
