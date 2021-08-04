@@ -160,4 +160,8 @@ $mobile-menu-bar-height: 50px;
     #main {
         margin-left: 0;
     }
+
+    .empty {
+        height: calc(100vh - #{$mobile-menu-bar-height});
+    }
 }
