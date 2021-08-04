@@ -59,6 +59,7 @@
             "composer update",
             "npm install",
             "npm run prod",
+            "npm audit fix",
             "php artisan migrate",
             "php artisan cache:clear",
             "php artisan route:cache",
@@ -81,6 +82,11 @@
             "php artisan event:cache",
             "php artisan optimize",
             "php artisan up"
+        ],
+        "deploy": [
+            "git pull",
+            "composer update",
+            "composer simple-build"
         ]
     },
     "extra": {
