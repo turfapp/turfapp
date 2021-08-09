@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const tailwind = require('tailwindcss');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +12,11 @@ const mix = require('laravel-mix');
  |
  */
 
+// JavaScript assets
 mix.ts('resources/js/app.ts', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/login.scss', 'public/css')
-    .sass('resources/sass/front.scss', 'public/css');
+
+// Styling assets
+mix.sass('resources/sass/app.scss', 'public/css')
+    .options({
+        postCss: [ tailwind('./tailwind.config.js') ]
+    });
