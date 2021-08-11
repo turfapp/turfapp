@@ -4,10 +4,6 @@
     <script src="{{ asset('js/main.js') }}" defer="defer"></script>
 @endpush
 
-@push('stylesheets')
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
-@endpush
-
 @section('body')
     @include('web.app._layout.sidebar')
     <div id="main">
