@@ -64,7 +64,7 @@
                 </div>
             </div>
             @if($log_date_groups->count() > 0)
-                <x-log-overview :groups="$log_date_groups" :shown="$num_log_items_shown" :total="$num_log_items"></x-log-overview>
+                <x-log::overview :groups="$log_date_groups" :shown="$num_log_items_shown" :total="$num_log_items"></x-log::overview>
             @endif
         </div>
     </div>

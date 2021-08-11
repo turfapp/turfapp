@@ -20,41 +20,45 @@
 
 declare(strict_types=1);
 
-namespace App\View\Components;
+namespace App\View\Components\Log;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
 
 /**
- * Class LogSection
+ * Class Overview
  *
- * @package App\View\Components
+ * @package App\View\Components\Section
  */
-class LogSection extends Component
+class Overview extends Component
 {
     /**
-     * @var string The date for this log section
+     * @var Collection The sections (groups) in this log overview, usually based on the
+     * log's creation date
      */
-    public string $log_date;
+    public Collection $groups;
 
     /**
-     * @var Collection The log items in this log section
+     * @var int The number of log items that will be shown
      */
-    public Collection $log_items;
+    public int $shown;
+
+    /**
+     * @var int The total number of log items
+     */
+    public int $total;
 
     /**
      * Create a new component instance.
      *
-     * @var string $log_date The date for this log section
-     * @var Collection $log_items The log items in this log section
-     *
      * @return void
      */
-    public function __construct(string $date, Collection $items)
+    public function __construct(Collection $groups, int $shown, int $total)
     {
-        $this->log_date = $date;
-        $this->log_items = $items;
+        $this->groups = $groups;
+        $this->shown = $shown;
+        $this->total = $total;
     }
 
     /**
@@ -64,6 +68,6 @@ class LogSection extends Component
      */
     public function render(): View
     {
-        return view('components.log-section');
+        return view('components.log.overview');
     }
 }

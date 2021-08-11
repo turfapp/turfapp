@@ -41,6 +41,7 @@ use App\Services\GroupSettingsService;
 use App\Services\JoinGroupService;
 use App\Services\StocktakingService;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
@@ -74,6 +75,8 @@ class AppServiceProvider extends ServiceProvider
     {
         setlocale(LC_TIME, Config::get('app.lc_all'));
         Carbon::setLocale(Config::get('app.locale'));
+
+        $this->bootstrapComponents();
     }
 
     /**
@@ -171,5 +174,14 @@ class AppServiceProvider extends ServiceProvider
                 $app->make(GroupSettingFactory::class)
             );
         });
+    }
+
+    /**
+     * Bootstraps any necessary components and component namespaces.
+     */
+    private function bootstrapComponents(): void
+    {
+        Blade::componentNamespace('App\\View\\Components\\Log', 'log');
+        Blade::componentNamespace('App\\View\\Components\\Overview', 'overview');
     }
 }

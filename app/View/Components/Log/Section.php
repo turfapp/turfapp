@@ -20,38 +20,41 @@
 
 declare(strict_types=1);
 
-namespace App\View\Components;
+namespace App\View\Components\Log;
 
-use App\Models\Membership;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
 
 /**
- * Class OverviewRow
+ * Class Section
  *
- * @package App\View\Components
+ * @package App\View\Components\Section
  */
-class OverviewRow extends Component
+class Section extends Component
 {
     /**
-     * @var bool Whether to print the username in bold
+     * @var string The date for this log section
      */
-    public bool $bold;
+    public string $log_date;
 
     /**
-     * @var Membership The membership to display this row
+     * @var Collection The log items in this log section
      */
-    public Membership $membership;
+    public Collection $log_items;
 
     /**
      * Create a new component instance.
      *
-     * @param Membership $membership The membership to display this row
+     * @var string $log_date The date for this log section
+     * @var Collection $log_items The log items in this log section
+     *
+     * @return void
      */
-    public function __construct(Membership $membership, bool $bold = false)
+    public function __construct(string $date, Collection $items)
     {
-        $this->bold = $bold;
-        $this->membership = $membership;
+        $this->log_date = $date;
+        $this->log_items = $items;
     }
 
     /**
@@ -61,6 +64,6 @@ class OverviewRow extends Component
      */
     public function render(): View
     {
-        return view('components.overview-row');
+        return view('components.log.section');
     }
 }

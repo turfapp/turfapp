@@ -20,45 +20,39 @@
 
 declare(strict_types=1);
 
-namespace App\View\Components;
+namespace App\View\Components\Overview;
 
+use App\Models\Membership;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
+use function view;
 
 /**
- * Class LogOverview
+ * Class Row
  *
- * @package App\View\Components
+ * @package App\View\Components\Overview
  */
-class LogOverview extends Component
+class Row extends Component
 {
     /**
-     * @var Collection The sections (groups) in this log overview, usually based on the
-     * log's creation date
+     * @var bool Whether to print the username in bold
      */
-    public Collection $groups;
+    public bool $bold;
 
     /**
-     * @var int The number of log items that will be shown
+     * @var Membership The membership to display this row
      */
-    public int $shown;
-
-    /**
-     * @var int The total number of log items
-     */
-    public int $total;
+    public Membership $membership;
 
     /**
      * Create a new component instance.
      *
-     * @return void
+     * @param Membership $membership The membership to display this row
      */
-    public function __construct(Collection $groups, int $shown, int $total)
+    public function __construct(Membership $membership, bool $bold = false)
     {
-        $this->groups = $groups;
-        $this->shown = $shown;
-        $this->total = $total;
+        $this->bold = $bold;
+        $this->membership = $membership;
     }
 
     /**
@@ -68,6 +62,6 @@ class LogOverview extends Component
      */
     public function render(): View
     {
-        return view('components.log-overview');
+        return view('components.overview.row');
     }
 }

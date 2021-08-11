@@ -11,9 +11,9 @@
         </div>
         <div class="content">
             <div id="turf-overview" data-error="{{ __('Something went wrong causing the tally to not be saved.') }}">
-                <x-overview-row :membership="$logged_user_membership" :bold="true"></x-overview-row>
+                <x-overview::row :membership="$logged_user_membership" :bold="true"></x-overview::row>
                 @foreach($members_excluding_current_viewer as $membership)
-                    <x-overview-row :membership="$membership"></x-overview-row>
+                    <x-overview::row :membership="$membership"></x-overview::row>
                 @endforeach
             </div>
         </div>
