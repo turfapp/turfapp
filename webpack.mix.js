@@ -13,10 +13,10 @@ const tailwind = require('tailwindcss');
  */
 
 // JavaScript assets
-mix.ts('resources/js/app.ts', 'public/js')
+mix.ts('resources/js/main.ts', 'public/js')
 
 // Styling assets
-mix.sass('resources/sass/app.scss', 'public/css')
+mix.sass('resources/sass/main.scss', 'public/css')
     .options({
         postCss: [ tailwind('./tailwind.config.js') ]
     });
