@@ -40,6 +40,6 @@
 <meta property="og:description" content="Een alternatief voor papieren turflijsten" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ config('app.url') }}" />
-<link href="{{ asset('css/main.css') }}" rel="stylesheet" />
+<link href="{{ asset('css/main.css') }}" rel="stylesheet" crossorigin="anonymous" />
 @stack('scripts')
 @stack('stylesheets')
