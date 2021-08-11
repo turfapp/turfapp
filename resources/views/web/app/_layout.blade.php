@@ -1,11 +1,11 @@
 @extends('web._layout')
 
 @push('scripts')
-    <script src="{{ asset('js/app.js') }}" defer="defer"></script>
+    <script src="{{ asset('js/main.js') }}" defer="defer"></script>
 @endpush
 
 @push('stylesheets')
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
 @endpush
 
 @section('body')
