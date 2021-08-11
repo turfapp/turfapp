@@ -27,33 +27,33 @@
                     <p>{{ __('Administrator') }}</p>
                 </div>
             @endif
-            @if ($logged_user_membership->member_is_admin)
-                <ul class="member-buttons">
-                    <li title="{{ __('Set outstanding tally\'s of this user to zero') }}">
-                        <a href="{{ route('group.member.reset', [$group->group_name, $membership->user->id]) }}" data-form="#reset-user-form" data-confirm="{{ __('Are you sure you want to set the outstanding tally\'s of :username to zero?', ['username' => $membership->user->name]) }}">
-                            <i class="fas fa-undo"></i>
+            <ul class="member-buttons">
+                <li title="{{ __('Set outstanding tally\'s of this user to zero') }}">
+                    <a href="{{ route('group.member.reset', [$group->group_name, $membership->user->id]) }}" data-form="#reset-user-form" data-confirm="{{ __('Are you sure you want to set the outstanding tally\'s of :username to zero?', ['username' => $membership->user->name]) }}">
+                        <i class="fas fa-undo"></i>
+                    </a>
+                </li>
+                @if ($logged_user_membership->member_is_admin)
+                @if ($membership->member_is_admin)
+                    <li title="{{ __('Demote this user to member') }}">
+                        <a href="{{ route('group.member.demote', [$group->group_name, $membership->user->id]) }}" data-form="#demote-user-form">
+                            <i class="fas fa-arrow-down"></i>
                         </a>
                     </li>
-                    @if ($membership->member_is_admin)
-                        <li title="{{ __('Demote this user to member') }}">
-                            <a href="{{ route('group.member.demote', [$group->group_name, $membership->user->id]) }}" data-form="#demote-user-form">
-                                <i class="fas fa-arrow-down"></i>
-                            </a>
-                        </li>
-                    @else
-                        <li title="{{ __('Promote this user to administrator') }}">
-                            <a href="{{ route('group.member.promote', [$group->group_name, $membership->user->id]) }}" data-form="#promote-user-form">
-                                <i class="fas fa-arrow-up"></i>
-                            </a>
-                        </li>
-                    @endif
-                    <li title="{{ __('Kick this user') }}">
-                        <a href="{{ route('group.member.kick', [$group->group_name, $membership->user->id]) }}" data-form="#kick-user-form" data-confirm="{{ __('Are you sure you want to kick :username from :group? Any unsettled tally\'s will be lost!', ['username' => $membership->user->name, 'group' => $group->group_display_name]) }}">
-                            <i class="fas fa-ban"></i>
+                @else
+                    <li title="{{ __('Promote this user to administrator') }}">
+                        <a href="{{ route('group.member.promote', [$group->group_name, $membership->user->id]) }}" data-form="#promote-user-form">
+                            <i class="fas fa-arrow-up"></i>
                         </a>
                     </li>
-                </ul>
-            @endif
+                @endif
+                <li title="{{ __('Kick this user') }}">
+                    <a href="{{ route('group.member.kick', [$group->group_name, $membership->user->id]) }}" data-form="#kick-user-form" data-confirm="{{ __('Are you sure you want to kick :username from :group? Any unsettled tally\'s will be lost!', ['username' => $membership->user->name, 'group' => $group->group_display_name]) }}">
+                        <i class="fas fa-ban"></i>
+                    </a>
+                </li>
+                @endif
+            </ul>
         </div>
         <div class="content">
             <div class="t-centered">

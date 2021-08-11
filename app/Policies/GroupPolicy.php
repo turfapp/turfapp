@@ -71,7 +71,7 @@ class GroupPolicy
      */
     public function resetBalance(User $user, Group $group): bool
     {
-        return $group->has($user) && $group->get($user)->member_is_admin;
+        return $group->has($user);
     }
 
     /**
