@@ -1,3 +1,3 @@
-<div class="ta-wordmark">
+<div class="ta:wordmark">
     <p>{{ config('app.name' ) }}</p>
 </div>
