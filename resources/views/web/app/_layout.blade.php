@@ -8,14 +8,10 @@
     @include('web.app._layout.sidebar')
     <div id="main">
         @if(!empty(session()->get('error')))
-            <div class="error">
-                {{ session()->get('error') }}
-            </div>
+            <!-- TODO -->
         @endif
         @if(!empty(session()->get('success')))
-            <div class="success">
-                {{ session()->get('success') }}
-            </div>
+            <!-- TODO -->
         @endif
         @include('web.app._layout.mobile-sidebar')
         <div id="app" @stack('app-data')>

@@ -4,6 +4,6 @@
         @include('web._layout.head')
     </head>
     <body @stack('data')>
-        @include('web._layout.body')
+        @yield('body')
     </body>
 </html>
