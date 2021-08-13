@@ -1,7 +1,7 @@
 @extends('web._layout')
 
 @section('title')
-    Het gratis, advertentieloze en open-source turfsysteem
+    {{ __('The free, ad-less and open-source tally system') }}
 @endsection
 
 @section('body')
