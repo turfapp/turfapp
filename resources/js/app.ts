@@ -1,6 +1,4 @@
-import MouseOverEvent = JQuery.MouseOverEvent;
-
-require('./bootstrap');
+require('./boot');
 
 /**
  * Constants
@@ -10,16 +8,10 @@ const CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 const DOCUMENT_GESTURE_HANDLER = new Hammer(document.body);
 
 /**
- * Imports
- */
-
-import ClickEvent = JQuery.ClickEvent;
-
-/**
  * Global functions
  */
 
-function handleFormSubmitLinkClick(event: ClickEvent): void {
+function handleFormSubmitLinkClick(event: JQuery.ClickEvent): void {
     event.preventDefault();
 
     let isConfirmed = true;
@@ -119,7 +111,7 @@ function closeMobileSidebar(): void {
 
 $("#mobile-menu-open").on("click", openMobileSidebar);
 $("#mobile-menu-close").on("click", closeMobileSidebar);
-$("#mobile-menu-reload").on("click", (event: ClickEvent) => {
+$("#mobile-menu-reload").on("click", (event: JQuery.ClickEvent) => {
     $(event.target).addClass('rotate');
     window.location.reload();
 });
@@ -175,7 +167,7 @@ function updateTurfAmount(row: JQuery, operation: "increment" | "decrement") {
     });
 }
 
-$(".decrement").on("click", (event: ClickEvent) => {
+$(".decrement").on("click", (event: JQuery.ClickEvent) => {
     const row = $(event.target).closest(".row");
     updateTurfAmount(row, "decrement");
 
@@ -184,7 +176,7 @@ $(".decrement").on("click", (event: ClickEvent) => {
     event.stopPropagation()
 });
 
-$(".increment").on("click", (event: ClickEvent) => {
+$(".increment").on("click", (event: JQuery.ClickEvent) => {
     const row = $(event.target).closest(".row");
     updateTurfAmount(row, "increment")
 
@@ -206,15 +198,15 @@ $(".increment").on("click", (event: ClickEvent) => {
  */
 const joinLinkElement = $("#join-link");
 
-joinLinkElement.on("mouseover", (event: MouseOverEvent) => {
+joinLinkElement.on("mouseover", (event: JQuery.MouseOverEvent) => {
     event.currentTarget.select();
 });
 
-joinLinkElement.on("click", (event: ClickEvent) => {
+joinLinkElement.on("click", (event: JQuery.ClickEvent) => {
     event.currentTarget.select();
 });
 
-$("#copy-link").on("click", (event: ClickEvent) => {
+$("#copy-link").on("click", (event: JQuery.ClickEvent) => {
     const joinLink = joinLinkElement.val();
     const copiedMessage = event.currentTarget.dataset.copied;
     const copyFailed = event.currentTarget.dataset.copyfailed;
@@ -246,7 +238,7 @@ $("#copy-link").on("click", (event: ClickEvent) => {
 
 const iconWelcome = $("#icon-welcome");
 
-iconWelcome.on("click", (event: ClickEvent) => {
+iconWelcome.on("click", (event: JQuery.ClickEvent) => {
     const color = Math.floor(Math.random() * 16777215).toString(16);
     event.currentTarget.style.color = "#" + color;
 });

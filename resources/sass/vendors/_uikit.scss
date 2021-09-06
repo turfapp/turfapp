@@ -16,6 +16,6 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@forward 'fontawesome';
-@forward 'quicksand';
-@forward 'uikit';
+@import '~uikit/src/scss/variables-theme.scss';
+@import '~uikit/src/scss/mixins-theme.scss';
+@import '~uikit/src/scss/uikit-theme.scss';
