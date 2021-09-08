@@ -89,10 +89,20 @@ class RegisterController extends Controller
     }
 
     /**
+     * Show the application's registration form.
+     *
+     * @return View
+     */
+    public function view(): View
+    {
+        return $this->viewFactory->make('web.auth.register');
+    }
+
+    /**
      * @inheritDoc
      */
     public function showRegistrationForm(): View
     {
-        return $this->viewFactory->make('web.auth.register');
+        return $this->view();
     }
 }

@@ -36,41 +36,63 @@ use App\Http\Controllers\App\Group\StocktakingController;
 use App\Http\Controllers\App\Group\StocktakingEditController;
 use App\Http\Controllers\App\Groups\NewController;
 use App\Http\Controllers\App\IndexController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
-
-// Authentication routes (login, register, etc.)
-Auth::routes();
 
 // Index route
 Route::get('/', [\App\Http\Controllers\IndexController::class, 'view'])->name('index');
 
+// Authentication routes
+Route::prefix('/auth')->group(function () {
+    Route::get('/login', [LoginController::class, 'view'])->name('auth.login');
+    Route::post('/login', [LoginController::class, 'login']);
+    Route::post('/logout', [LoginController::class, 'logout'])->name('auth.logout');
+
+    Route::get('/password/reset', [ForgotPasswordController::class, 'view'])->name('auth.password.reset');
+    Route::post('/password/reset', [ResetPasswordController::class, 'reset']);
+    Route::get('/password/reset/{token}', [ResetPasswordController::class, 'view'])->name('auth.password.reset.token');
+    Route::post('/password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('auth.password.email');
+
+    Route::get('/register', [RegisterController::class, 'view'])->name('auth.register');
+    Route::post('/register', [RegisterController::class, 'register']);
+});
+
 // App index route
 Route::get('/app', [IndexController::class, 'view'])->name('app');
 
-// Routes related to "groups" (should start with "/app/groups/")
+// Groups routes
 Route::prefix('/app/groups')->group(function () {
     Route::get('/new', [NewController::class, 'view'])->name('groups.new');
     Route::post('/new', [NewController::class, 'add']);
 });
 
-// Routes related to "group" (should start with "/app/group/{group:group_name}/")
+// Specific group routes
 Route::prefix('/app/group/{group}')->group(function () {
     Route::get('/add', [AddController::class, 'view'])->name('group.add');
-    Route::get('/join/{groupjoincode}', [JoinController::class, 'view'])->name('group.join');
-    Route::get('/logs', [LogController::class, 'view'])->name('group.logs');
-    Route::get('/member/{user}', [MemberController::class, 'view'])->name('group.member');
-    Route::get('/overview', [OverviewController::class, 'view'])->name('group.overview');
-    Route::get('/settings', [SettingsController::class, 'view'])->name('group.settings');
-    Route::get('/stocktaking', [StocktakingController::class, 'view'])->name('group.stocktaking');
-    Route::get('/stocktaking/edit', [StocktakingEditController::class, 'view'])->name('group.stocktaking.edit');
     Route::post('/add/reset', [ResetLinkController::class, 'resetLink'])->name('group.add.reset');
+
+    Route::get('/join/{groupjoincode}', [JoinController::class, 'view'])->name('group.join');
     Route::post('/join/{groupjoincode}', [JoinController::class, 'join']);
+
     Route::post('/leave', [LeaveController::class, 'leave'])->name('group.leave');
+
+    Route::get('/logs', [LogController::class, 'view'])->name('group.logs');
+
+    Route::get('/member/{user}', [MemberController::class, 'view'])->name('group.member');
     Route::post('/member/{user}/demote', [DemoteController::class, 'demote'])->name('group.member.demote');
     Route::post('/member/{user}/kick', [KickController::class, 'kick'])->name('group.member.kick');
     Route::post('/member/{user}/promote', [PromoteController::class, 'promote'])->name('group.member.promote');
     Route::post('/member/{user}/reset', [ResetController::class, 'reset'])->name('group.member.reset');
+
+    Route::get('/overview', [OverviewController::class, 'view'])->name('group.overview');
+
+    Route::get('/settings', [SettingsController::class, 'view'])->name('group.settings');
     Route::post('/settings', [SettingsController::class, 'update']);
+
+    Route::get('/stocktaking', [StocktakingController::class, 'view'])->name('group.stocktaking');
+    Route::get('/stocktaking/edit', [StocktakingEditController::class, 'view'])->name('group.stocktaking.edit');
     Route::post('/stocktaking/edit', [StocktakingEditController::class, 'edit']);
 });

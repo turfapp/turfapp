@@ -60,7 +60,7 @@ class LoginController extends Controller
      *
      * @return View
      */
-    public function showLoginForm(): View
+    public function view(): View
     {
         return $this->viewFactory->make('web.auth.login');
     }

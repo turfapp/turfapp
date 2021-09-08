@@ -40,7 +40,7 @@ class ForgotPasswordController extends Controller
      *
      * @return View
      */
-    public function showLinkRequestForm(): View
+    public function view(): View
     {
         return $this->viewFactory->make('web.auth.email');
     }

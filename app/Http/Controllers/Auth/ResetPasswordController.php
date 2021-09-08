@@ -44,14 +44,25 @@ class ResetPasswordController extends Controller
     protected $redirectTo = '/app';
 
     /**
-     * @inheritDoc
+     * Show the application's password reset form.
+     *
+     * @param Request $request
+     * @return View
      */
-    public function showResetForm(Request $request): View
+    public function view(Request $request): View
     {
         $token = $request->route()->parameter('token');
 
         return $this->viewFactory->make('web.auth.reset')->with(
             ['token' => $token, 'email' => $request->email]
         );
+    }
+
+    /**
+     * @@inheritDoc
+     */
+    public function showResetForm(Request $request): View
+    {
+        return $this->view($request);
     }
 }
