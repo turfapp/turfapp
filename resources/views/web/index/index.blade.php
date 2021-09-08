@@ -1,4 +1,4 @@
-@extends('web.home._layout')
+@extends('web.index._layout')
 
 @section('app')
 <!-- TODO -->
