@@ -49,6 +49,8 @@
                         <input id="password-confirm" type="password" class="form-input" name="password_confirmation" required />
                     </div>
 
+                    <div class="form-group">{{ __('By registering you give TurfApp explicit permission to process and store your username, email-address and password until your account is removed.') }}</div>
+
                     <div class="form-group">
                         <button type="submit" class="button button-blue">
                             {{ __('Register') }}
