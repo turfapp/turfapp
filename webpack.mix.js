@@ -12,7 +12,7 @@ const mix = require('laravel-mix');
  */
 
 // JavaScript assets
-mix.ts('resources/js/app.ts', 'public/js');
+mix.ts('resources/js/main.ts', 'public/js');
 
 // Styling assets
 mix.sass('resources/sass/main.scss', 'public/css');
