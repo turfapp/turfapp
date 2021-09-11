@@ -14,8 +14,7 @@
         "laravel/sanctum": "^2.10",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
-        "laravelcollective/html": "*",
-        "torrix/laravel-uikit": "^0.1.3"
+        "laravelcollective/html": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

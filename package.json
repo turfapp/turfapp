@@ -13,8 +13,6 @@
         "@fontsource/quicksand": "^4.5.1",
         "@fortawesome/fontawesome-free": "^5.15.4",
         "@types/hammerjs": "^2.0.39",
-        "@types/jquery": "^3.5.5",
-        "@types/uikit": "^3.3.2",
         "autoprefixer": "^10.3.4",
         "axios": "^0.21.4",
         "hammerjs": "^2.0.8",
@@ -23,7 +21,6 @@
         "sass": "^1.39.0",
         "sass-loader": "^11.0.1",
         "ts-loader": "^9.1.1",
-        "typescript": "^4.4.2",
-        "uikit": "^3.3.0"
+        "typescript": "^4.4.2"
     }
 }
