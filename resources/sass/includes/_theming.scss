@@ -1,0 +1,58 @@
+/*!
+ * TurfApp - TurfApp - An alternative for paper tally lists.
+ *  Copyright (C) 2021  Marijn van Wezel
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*!
+ * This file is mostly based on this article by Katie McTigue.
+ *
+ * https://medium.com/@katiemctigue/how-to-create-a-dark-mode-in-sass-609f131a3995
+ */
+
+@use 'theme-light';
+@use 'theme-dark';
+
+$logo: 'logo';
+$background: 'background';
+
+$themes: (
+    light: (
+        $logo: theme-light.$logo,
+        $background: theme-light.$background
+    ),
+    dark: (
+        $logo: theme-dark.$logo,
+        $background: theme-dark.$background
+    ),
+);
+
+@mixin themed() {
+    @each $theme, $map in $themes {
+        .theme--#{$theme} & {
+            $theme-map: () !global;
+            @each $key, $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function t($key) {
+    @return map-get($theme-map, $key);
+}
