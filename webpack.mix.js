@@ -1,5 +1,11 @@
 const mix = require('laravel-mix');
 
+mix.options({
+    fileLoaderDirs:  {
+        fonts: 'static/fonts'
+    }
+});
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,7 +18,7 @@ const mix = require('laravel-mix');
  */
 
 // JavaScript assets
-mix.ts('resources/js/main.ts', 'public/js');
+mix.ts('resources/js/main.ts', 'public/static/js');
 
 // Styling assets
-mix.sass('resources/sass/main.scss', 'public/css');
+mix.sass('resources/sass/main.scss', 'public/static/css');
