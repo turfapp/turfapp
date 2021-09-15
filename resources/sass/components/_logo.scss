@@ -1,3 +1,15 @@
+@use '../includes/theming';
+
 .ta\:wordmark {
     font-family: 'Quicksand', 'sans-serif';
+}
+
+.ta\:logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @include theming.themed() {
+        background-image: theming.t(theming.$logo);
+    }
 }
