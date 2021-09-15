@@ -1,6 +1,6 @@
-# The `includes/` folder
+# About the `includes/` folder
 
-The `includes/` folder contains Sass tools and helpers that can be included (using `@use`) into other partials. Every variable, function, mixin and placeholder should be put in here. This folder should not output a single line of CSS when compiled on its own.
+The `includes/` folder contains Sass tools and helpers that can be included (using `@use`) into other partials. Every (reusable) variable, function, mixin and placeholder should be put in here. This folder should not output a single line of CSS when compiled on its own.
 
 It differs from the other folders in two major ways:
 
