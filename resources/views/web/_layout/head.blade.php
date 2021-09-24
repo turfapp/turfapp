@@ -1,40 +1,50 @@
 <meta charset="utf-8" />
 <title>{{ config('app.name') }}@hasSection('title') - @yield('title')@endif</title>
-@stack('scripts-early')
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="csrf-token" content="{{ csrf_token() }}" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta name="apple-touch-fullscreen" content="yes" />
+@stack('scripts-early')
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="browsermode" content="application">
+<meta name="screen-orientation" content="portrait">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
 <meta name="MobileOptimized" content="width" />
 <meta name="HandheldFriendly" content="true" />
-<meta name="keywords" content="turfapp,turf,turflijsten,digitaal turfen,digitaal streepen,streepjesapp,strepen online,studentenhuis streepjes app,turff" />
-<meta name="language" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
-<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('static/manifest/apple-touch-icon.png') }}" />
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('static/manifest/favicon-32x32.png') }}" />
-<link rel="icon" type="image/png" sizes="194x194" href="{{ asset('static/manifest/favicon-194x194.png') }}" />
-<link rel="icon" type="image/png" sizes="192x192" href="{{ asset('static/manifest/android-chrome-192x192.png') }}" />
-<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('static/manifest/favicon-16x16.png') }}" />
-<link rel="manifest" href="{{ asset('static/manifest/site.webmanifest') }}" />
-<link rel="mask-icon" href="{{ asset('static/manifest/safari-pinned-tab.svg') }}" color="#5bbad5" />
-<link rel="shortcut icon" href="{{ asset('static/manifest/favicon.ico') }}" />
-<link href="{{ asset('static/manifest/iphone5_splash.png') }}" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="{{ asset('static/manifest/iphone6_splash.png') }}" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="{{ asset('static/manifest/iphoneplus_splash.png') }}" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-<link href="{{ asset('static/manifest/iphonex_splash.png') }}" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-<link href="{{ asset('static/manifest/iphonexr_splash.png') }}" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="{{ asset('static/manifest/iphonexsmax_splash.png') }}" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-<link href="{{ asset('static/manifest/ipad_splash.png') }}" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="{{ asset('static/manifest/ipadpro1_splash.png') }}" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="{{ asset('static/manifest/ipadpro3_splash.png') }}" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="{{ asset('static/manifest/ipadpro2_splash.png') }}" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<meta name="apple-mobile-web-app-title" content="TurfApp" />
-<meta name="application-name" content="TurfApp" />
-<meta name="msapplication-TileColor" content="#ffc40d" />
+<link rel="manifest" href="{{ asset('static/manifest/site.webmanifest') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="shortcut icon" href="{{ asset('static/manifest/favicon.ico') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('static/manifest/favicon-16x16.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('static/manifest/favicon-32x32.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="icon" type="image/png" sizes="192x192" href="{{ asset('static/manifest/android-chrome-192x192.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon" sizes="57x57" href="{{ asset('static/manifest/apple-touch-icon-57x57.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon" sizes="60x60" href="{{ asset('static/manifest/apple-touch-icon-60x60.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('static/manifest/apple-touch-icon-72x72.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('static/manifest/apple-touch-icon-76x76.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('static/manifest/apple-touch-icon-114x114.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('static/manifest/apple-touch-icon-120x120.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon" sizes="144x144" href="{{ asset('static/manifest/apple-touch-icon-144x144.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon" sizes="152x152" href="{{ asset('static/manifest/apple-touch-icon-152x152.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('static/manifest/apple-touch-icon-180x180.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('static/manifest/apple-touch-icon-57x57-precomposed.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ asset('static/manifest/apple-touch-icon-60x60-precomposed.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('static/manifest/apple-touch-icon-72x72-precomposed.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset('static/manifest/apple-touch-icon-76x76-precomposed.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('static/manifest/apple-touch-icon-114x114-precomposed.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset('static/manifest/apple-touch-icon-120x120-precomposed.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('static/manifest/apple-touch-icon-144x144-precomposed.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset('static/manifest/apple-touch-icon-152x152-precomposed.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="{{ asset('static/manifest/apple-touch-icon-180x180-precomposed.png') }}?v=wcmPy4MLLqzcdHGNXYu8" />
+<link rel="mask-icon" href="{{ asset('static/manifest/safari-pinned-tab.svg') }}?v=wcmPy4MLLqzcdHGNXYu8" color="#122539" />
 <meta name="msapplication-TileImage" content="{{ asset('static/manifest/mstile-144x144.png') }}" />
 <meta name="msapplication-config" content="{{ asset('static/manifest/browserconfig.xml') }}" />
-<meta name="theme-color" content="#ffffff" />
+<meta name="msapplication-TileColor" content="#ffc40d" />
+<meta name="apple-mobile-web-app-title" content="TurfApp" />
+<meta name="application-name" content="TurfApp" />
+<meta name="theme-color" content="#122539" />
+<meta name="keywords" content="turfapp,turf,turflijsten,digitaal turfen,digitaal streepen,streepjesapp,strepen online,studentenhuis streepjes app,turff" />
+<meta name="language" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
 <meta name="description" content="TurfApp - Een alternatief voor papieren turflijsten" />
 <meta property="og:title" content="TurfApp - Een alternatief voor papieren turflijsten" />
 <meta property="og:description" content="Een alternatief voor papieren turflijsten" />

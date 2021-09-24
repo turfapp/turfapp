@@ -60,6 +60,8 @@ Route::prefix('/auth')->group(function () {
     Route::post('/register', [RegisterController::class, 'register']);
 });
 
+Route::get('/auth', fn() => redirect()->route('auth.login'));
+
 // App index route
 Route::get('/app', [IndexController::class, 'view'])->name('app');
 

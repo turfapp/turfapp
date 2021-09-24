@@ -1,8 +1,12 @@
 @extends('web._layout')
 
-@section('body')
+@push('wrapper-classes')
+    ta:auth
+@endpush
 
-    <div id="app">
-        @yield('app')
+@section('wrapper')
+    <div class="ta:header">
+        <div class="ta:logo"></div>
     </div>
+    @yield('content')
 @endsection

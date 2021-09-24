@@ -16,5 +16,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-$logo: url('/static/manifest/wordmark_full.svg');
-$background: #ffffff;
+/*
+ * Remove all padding and margin from the main HTML element, so we can use
+ * the entire screen real-estate.
+ */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}

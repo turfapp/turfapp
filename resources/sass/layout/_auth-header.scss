@@ -16,5 +16,12 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-$logo: url('/static/manifest/wordmark_full.svg');
-$background: #ffffff;
+.ta\:auth .ta\:header {
+    width: 100%;
+    height: 64px;
+
+    .ta\:logo {
+        margin: 0 auto;
+        height: 100%;
+    }
+}

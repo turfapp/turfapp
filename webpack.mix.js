@@ -19,6 +19,7 @@ mix.options({
 
 // JavaScript assets
 mix.ts('resources/js/main.ts', 'public/static/js');
+mix.ts('resources/js/worker.ts', 'public/');
 
 // Styling assets
 mix.sass('resources/sass/main.scss', 'public/static/css');

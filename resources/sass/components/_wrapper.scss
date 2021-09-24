@@ -16,5 +16,19 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-$logo: url('/static/manifest/wordmark_full.svg');
-$background: #ffffff;
+/**
+ * The 'wrapper' component is the base component of the entire application.
+ * Every other component is a sub-component of this component. There is only
+ * ever one wrapper component on a page.
+ */
+
+@use '../includes/theming';
+
+#wrapper {
+    height: 100%;
+    width: 100%;
+
+    @include theming.themed() {
+        background-color: theming.t(theming.$background);
+    }
+}

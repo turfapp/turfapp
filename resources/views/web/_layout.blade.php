@@ -3,7 +3,9 @@
     <head>
         @include('web._layout.head')
     </head>
-    <body @stack('data')>
-        @yield('body')
+    <body class="ta:dark" @stack('data')>
+        <div id="wrapper" class="@stack('wrapper-classes')" @stack('wrapper-data')>
+            @yield('wrapper')
+        </div>
     </body>
 </html>
