@@ -29,6 +29,7 @@
     width: 100%;
 
     @include theming.themed() {
-        background-color: theming.t(theming.$background);
+        background-color: theming.t(theming.$color-primary);
+        color: theming.t(theming.$glyph-primary);
     }
 }

@@ -1,15 +1,19 @@
 @use '../includes/theming';
 
-.ta\:wordmark {
-    font-family: 'Quicksand', 'sans-serif';
-}
-
 .ta\:logo {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+    display: table;
+    font-family: 'Quicksand', sans-serif;
 
     @include theming.themed() {
-        background-image: theming.t(theming.$logo);
+        color: theming.t(theming.$glyph-primary);
+    }
+
+    p {
+        display: table-cell;
+        vertical-align: middle;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        line-height: 100%;
     }
 }

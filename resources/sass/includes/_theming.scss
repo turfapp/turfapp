@@ -25,17 +25,30 @@
 @use 'theme-light';
 @use 'theme-dark';
 
-$logo: 'logo';
-$background: 'background';
+$color-primary: 'color-primary';
+$color-secondary: 'color-secondary';
+
+$glyph-primary: 'glyph-primary';
+$glyph-secondary: 'glyph-secondary';
+$glyph-blue: 'glyph-blue';
+$glyph-blue-override: 'glyph-blue-override';
 
 $themes: (
     light: (
-        $logo: theme-light.$logo,
-        $background: theme-light.$background
+        $color-primary: theme-light.$color-primary,
+        $color-secondary: theme-light.$color-secondary,
+        $glyph-primary: theme-light.$glyph-primary,
+        $glyph-secondary: theme-light.$glyph-secondary,
+        $glyph-blue: theme-light.$glyph-blue,
+        $glyph-blue-override: theme-light.$glyph-blue-override
     ),
     dark: (
-        $logo: theme-dark.$logo,
-        $background: theme-dark.$background
+        $color-primary: theme-dark.$color-primary,
+        $color-secondary: theme-dark.$color-secondary,
+        $glyph-primary: theme-dark.$glyph-primary,
+        $glyph-secondary: theme-dark.$glyph-secondary,
+        $glyph-blue: theme-dark.$glyph-blue,
+        $glyph-blue-override: theme-dark.$glyph-blue-override
     ),
 );
 

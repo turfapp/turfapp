@@ -21,6 +21,8 @@
  * the entire screen real-estate.
  */
 
+@use '../includes/theming';
+
 html, body {
     margin: 0;
     padding: 0;

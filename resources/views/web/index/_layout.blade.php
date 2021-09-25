@@ -4,9 +4,7 @@
     {{ __('The free, ad-less and open-source tally system') }}
 @endsection
 
-@push('wrapper-classes')
-ta:index
-@endpush
+@push('wrapper-classes') ta:index @endpush
 
 @section('wrapper')
     @yield('content')
