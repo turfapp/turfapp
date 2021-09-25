@@ -16,4 +16,19 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+@use '../includes/breakpoints';
 
+.ta\:auth .ta\:content {
+    padding: 65px 15px;
+    max-width: 960px;
+    margin: 0 auto;
+
+    .ta\:flex-container {
+        display: flex;
+    }
+
+    @include breakpoints.small() {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}

@@ -1,5 +1,5 @@
 @extends('web.auth._layout')
 
-@section('app')
-<!-- TODO -->
+@section('title')
+{{ __('Login') }}
 @endsection
