@@ -48,7 +48,7 @@
             "type": "image/png"
         },
         {
-            "src": "/static/manifest/maskable.png?v=wcmPy4MLLqzcdHGNXYu8",
+            "src": "/static/manifest/safari-pinned-tab.svg?v=wcmPy4MLLqzcdHGNXYu8",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable"
