@@ -18,4 +18,15 @@
 
 @use '~@fontsource/quicksand/scss/mixins' as QuickSand;
 
-@include QuickSand.fontFaceCustom();
+@each $weight in 300, 400, 500, 600, 700 {
+    @include QuickSand.fontFace(
+            QuickSand.$fontName,
+            QuickSand.$fontId,
+            QuickSand.$style,
+            QuickSand.$display,
+            $weight,
+            QuickSand.$fontDir,
+            QuickSand.$unicodeMap
+    );
+}
+

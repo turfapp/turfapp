@@ -27,9 +27,12 @@
 
 $color-primary: 'color-primary';
 $color-secondary: 'color-secondary';
+$color-tertiary: 'color-tertiary';
 
 $glyph-primary: 'glyph-primary';
 $glyph-secondary: 'glyph-secondary';
+$glyph-tertiary: 'glyph-tertiary';
+
 $glyph-blue: 'glyph-blue';
 $glyph-blue-override: 'glyph-blue-override';
 
@@ -37,16 +40,20 @@ $themes: (
     light: (
         $color-primary: theme-light.$color-primary,
         $color-secondary: theme-light.$color-secondary,
+        $color-tertiary: theme-light.$color-tertiary,
         $glyph-primary: theme-light.$glyph-primary,
         $glyph-secondary: theme-light.$glyph-secondary,
+        $glyph-tertiary: theme-light.$glyph-tertiary,
         $glyph-blue: theme-light.$glyph-blue,
         $glyph-blue-override: theme-light.$glyph-blue-override
     ),
     dark: (
         $color-primary: theme-dark.$color-primary,
         $color-secondary: theme-dark.$color-secondary,
+        $color-tertiary: theme-dark.$color-tertiary,
         $glyph-primary: theme-dark.$glyph-primary,
         $glyph-secondary: theme-dark.$glyph-secondary,
+        $glyph-tertiary: theme-dark.$glyph-tertiary,
         $glyph-blue: theme-dark.$glyph-blue,
         $glyph-blue-override: theme-dark.$glyph-blue-override
     ),

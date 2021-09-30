@@ -18,17 +18,8 @@
 
 @use '../includes/theming';
 
-.ta\:auth .ta\:header {
-    width: 100%;
-    height: 50px;
-
-    .ta\:logo {
-        margin: 0 auto;
-        height: 100%;
-        font-size: 1.5em;
-    }
-
+.ta\:auth header {
     @include theming.themed() {
-        border-bottom: 1px solid theming.t(theming.$color-secondary);
+        background-color: theming.t(theming.$color-tertiary);
     }
 }

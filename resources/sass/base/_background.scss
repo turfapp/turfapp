@@ -16,17 +16,10 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-/*
- * Remove all padding and margin from the main HTML element, so we can use
- * the entire screen real-estate.
- */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
+@use '../includes/theming';
 
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    margin-bottom: 0;
+body {
+    @include theming.themed() {
+        background-color: theming.t(theming.$color-primary);
+    }
 }

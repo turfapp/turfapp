@@ -1,14 +1,16 @@
 @use '../includes/theming';
 
-.ta\:logo {
+.ta\:wordmark {
     display: table;
-    font-family: 'Quicksand', sans-serif;
 
     @include theming.themed() {
         color: theming.t(theming.$glyph-primary);
     }
 
-    p {
+    h1 {
+        font-size: 1em;
+        font-family: 'QuicksandVariable', sans-serif;
+        font-weight: 500;
         display: table-cell;
         vertical-align: middle;
         height: 100%;
@@ -17,3 +19,4 @@
         line-height: 100%;
     }
 }
+

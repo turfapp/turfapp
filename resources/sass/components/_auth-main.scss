@@ -16,17 +16,37 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-/*
- * Remove all padding and margin from the main HTML element, so we can use
- * the entire screen real-estate.
- */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
+@use '../includes/theming';
+@use '../includes/breakpoints';
 
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    margin-bottom: 0;
+.ta\:auth main {
+    padding: 100px 25px;
+
+    .ta\:info {
+        @include theming.themed() {
+            color: theming.t(theming.$glyph-primary);
+        }
+    }
+
+    .ta\:form {
+        border-radius: 18px;
+        padding: 17px;
+        box-sizing: border-box;
+
+        @include theming.themed() {
+            background-color: theming.t(theming.$color-secondary);
+        }
+    }
+
+    @include breakpoints.small() {
+        padding: 25px;
+
+        .ta\:info {
+            display: none;
+        }
+
+        .ta\:form {
+            border-radius: 8px;
+        }
+    }
 }

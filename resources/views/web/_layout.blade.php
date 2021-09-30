@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="ta:dark" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @include('web._layout.head')
     </head>
-    <body class="ta:dark" @stack('data')>
-        <div id="wrapper" class="@stack('wrapper-classes')" @stack('wrapper-data')>
-            @yield('wrapper')
-        </div>
+    <body class="@trim @stack('body-classes') @endtrim" @trim @stack('data') @endtrim>
+        @yield('body')
     </body>
 </html>

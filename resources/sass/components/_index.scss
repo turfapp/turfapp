@@ -16,5 +16,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+@forward 'auth-footer';
+@forward 'auth-header';
+@forward 'auth-main';
 @forward 'logo';
 @forward 'wrapper';

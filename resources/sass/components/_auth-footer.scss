@@ -16,4 +16,23 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+@use '../includes/theming';
 
+.ta\:auth footer {
+    @include theming.themed() {
+        background-color: theming.t(theming.$color-tertiary);
+    }
+
+    ul {
+        margin-left: 0;
+        padding-left: 100px;
+        padding-right: 100px;
+        list-style-type: none;
+
+        li {
+            margin-left: 0;
+            display: inline-block;
+            line-height: 100%;
+        }
+    }
+}
