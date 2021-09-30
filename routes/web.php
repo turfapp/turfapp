@@ -45,6 +45,19 @@ use Illuminate\Support\Facades\Route;
 // Index route
 Route::get('/', [\App\Http\Controllers\IndexController::class, 'view'])->name('index');
 
+Route::get('/privacy', function () {
+   // TODO
+})->name('privacy');
+
+Route::get('/terms', function () {
+    // TODO
+})->name('terms');
+
+Route::get('/about', function () {
+    // TODO
+})->name('about');
+
+
 // Authentication routes
 Route::prefix('/auth')->group(function () {
     Route::get('/login', [LoginController::class, 'view'])->name('auth.login');
