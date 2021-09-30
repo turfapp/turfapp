@@ -77,6 +77,7 @@ class AppServiceProvider extends ServiceProvider
         Carbon::setLocale(Config::get('app.locale'));
 
         $this->bootstrapComponents();
+        $this->bootstrapBladeDirectives();
     }
 
     /**
@@ -183,5 +184,20 @@ class AppServiceProvider extends ServiceProvider
     {
         Blade::componentNamespace('App\\View\\Components\\Log', 'log');
         Blade::componentNamespace('App\\View\\Components\\Overview', 'overview');
+    }
+
+    /**
+     * Bootstraps all custom blade directives.
+     */
+    private function bootstrapBladeDirectives(): void
+    {
+        Blade::directive('trim', function() {
+            return '<?php ob_start() ?>';
+        });
+
+        Blade::directive('endtrim', function() {
+            return '<?php echo trim(ob_get_clean()); ?>';
+        });
+
     }
 }
