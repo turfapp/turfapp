@@ -16,8 +16,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+@forward 'auth-auth-container';
 @forward 'auth-footer';
-@forward 'auth-header';
+@forward 'auth-info-container';
 @forward 'auth-main';
+@forward 'button';
 @forward 'logo';
+@forward 'form';
+@forward 'visible-hidden';
 @forward 'wrapper';
+

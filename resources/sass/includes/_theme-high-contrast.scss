@@ -16,33 +16,19 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@use '../includes/theming';
+$color-primary: #000000;
+$color-accent-primary: #ffffff;
+$color-secondary: #000000;
+$color-accent-secondary: #ffffff;
+$color-tertiary: #000000;
+$color-accent-tertiary: #ffffff;
+$color-error: #ff0033;
+$color-success: #4bb543;
+$color-button-primary: #ffffff;
+$color-button-primary-hover: #eeeeee;
 
-.ta\:wordmark {
-    display: table;
-
-    @include theming.themed() {
-        color: theming.t(theming.$glyph-primary);
-    }
-
-    h1 {
-        font-size: inherit;
-        font-family: 'QuicksandVariable', sans-serif;
-        font-weight: 500;
-        display: table-cell;
-        vertical-align: middle;
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        line-height: 100%;
-    }
-
-    a {
-        color: inherit;
-
-        &:visited {
-            color: inherit;
-        }
-    }
-}
-
+$glyph-primary: #ffffff;
+$glyph-secondary: #ffffff;
+$glyph-tertiary: #ffffff;
+$glyph-button-primary: #000000;
+$glyph-link: #2997FF;

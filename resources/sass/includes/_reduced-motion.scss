@@ -16,52 +16,19 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@use '../includes/breakpoints';
-@use '../includes/theming';
+/**
+ * This mixin should be wrapped around style declaration that cause an element
+ * to move with an animation, such as "animation-name" or "transition". It will
+ * make sure to include an appropriate "prefers-reduced-motion" media query that
+ * disables the animation for users that prefer reduced motion.
+ */
+@mixin reduce-motion() {
+    @content;
 
-$page-width: 960px;
-
-.ta\:auth {
-    display: flex;
-    flex-direction: column;
-
-    header {
-        height: 44px;
-        flex: 0 0 auto;
-
-        div {
-            margin: 0 auto;
-            height: 100%;
-            font-size: 1.5rem;
-        }
-    }
-
-    main {
-        max-width: $page-width;
-        margin: 0 auto;
-        flex: 1 0 auto;
-
-        .ta\:flex {
-            margin-top: 20px;
-            display: flex;
-            gap: 25px;
-
-            div {
-                flex: 50%;
-            }
-        }
-
-        @include breakpoints.small() {
-            margin: 0;
-        }
-    }
-
-    footer {
-        height: 75px;
-        flex-shrink: 0;
-
-        ul {
-            margin: 0 auto;
+    @media screen and (prefers-reduced-motion: reduce) {
+        & {
+            animation: none;
+            transition: none;
         }
     }
 }

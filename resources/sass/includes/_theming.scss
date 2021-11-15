@@ -22,40 +22,79 @@
  * https://medium.com/@katiemctigue/how-to-create-a-dark-mode-in-sass-609f131a3995
  */
 
-@use 'theme-light';
 @use 'theme-dark';
+@use 'theme-high-contrast';
+@use 'theme-light';
 
-$color-primary: 'color-primary';
-$color-secondary: 'color-secondary';
-$color-tertiary: 'color-tertiary';
+$color-primary: 'color-primary'; // Primary theme color; used for major elements such as page background
+$color-accent-primary: 'color-accent-primary'; // Accent theme color; used ONLY for accents, such as borders
+$color-secondary: 'color-secondary'; // Secondary theme color; used as the background for certain components
+$color-accent-secondary: 'color-accent-secondary'; // Accent theme color; used ONLY for accents, such as borders
+$color-tertiary: 'color-tertiary'; // Tertiary theme color; used as background for certain components
+$color-accent-tertiary: 'color-accent-tertiary'; // Accent theme color; used ONLY for accents, such as borders
+$color-error: 'color-error'; // Color used for error messages
+$color-success: 'color-success'; // Color used for success messages
 
 $glyph-primary: 'glyph-primary';
 $glyph-secondary: 'glyph-secondary';
 $glyph-tertiary: 'glyph-tertiary';
+$glyph-link: 'glyph-link';
+$glyph-button-primary: 'glyph-button-primary';
 
-$glyph-blue: 'glyph-blue';
-$glyph-blue-override: 'glyph-blue-override';
+$color-button-primary: 'color-button-primary';
+$color-button-primary-hover: 'color-button-primary-hover';
 
 $themes: (
     light: (
         $color-primary: theme-light.$color-primary,
+        $color-accent-primary: theme-light.$color-accent-primary,
         $color-secondary: theme-light.$color-secondary,
+        $color-accent-secondary: theme-light.$color-accent-secondary,
         $color-tertiary: theme-light.$color-tertiary,
+        $color-accent-tertiary: theme-light.$color-accent-tertiary,
+        $color-error: theme-light.$color-error,
+        $color-success: theme-light.$color-success,
+        $color-button-primary: theme-light.$color-button-primary,
+        $color-button-primary-hover: theme-light.$color-button-primary-hover,
         $glyph-primary: theme-light.$glyph-primary,
         $glyph-secondary: theme-light.$glyph-secondary,
         $glyph-tertiary: theme-light.$glyph-tertiary,
-        $glyph-blue: theme-light.$glyph-blue,
-        $glyph-blue-override: theme-light.$glyph-blue-override
+        $glyph-link: theme-light.$glyph-link,
+        $glyph-button-primary: theme-light.$glyph-button-primary
     ),
     dark: (
         $color-primary: theme-dark.$color-primary,
+        $color-accent-primary: theme-dark.$color-accent-primary,
         $color-secondary: theme-dark.$color-secondary,
+        $color-accent-secondary: theme-dark.$color-accent-secondary,
         $color-tertiary: theme-dark.$color-tertiary,
+        $color-accent-tertiary: theme-dark.$color-accent-tertiary,
+        $color-error: theme-dark.$color-error,
+        $color-success: theme-dark.$color-success,
+        $color-button-primary: theme-dark.$color-button-primary,
+        $color-button-primary-hover: theme-dark.$color-button-primary-hover,
         $glyph-primary: theme-dark.$glyph-primary,
         $glyph-secondary: theme-dark.$glyph-secondary,
         $glyph-tertiary: theme-dark.$glyph-tertiary,
-        $glyph-blue: theme-dark.$glyph-blue,
-        $glyph-blue-override: theme-dark.$glyph-blue-override
+        $glyph-link: theme-dark.$glyph-link,
+        $glyph-button-primary: theme-dark.$glyph-button-primary
+    ),
+    high-contrast: (
+        $color-primary: theme-high-contrast.$color-primary,
+        $color-accent-primary: theme-high-contrast.$color-accent-primary,
+        $color-secondary: theme-high-contrast.$color-secondary,
+        $color-accent-secondary: theme-high-contrast.$color-accent-secondary,
+        $color-tertiary: theme-high-contrast.$color-tertiary,
+        $color-accent-tertiary: theme-high-contrast.$color-accent-tertiary,
+        $color-error: theme-high-contrast.$color-error,
+        $color-success: theme-high-contrast.$color-success,
+        $color-button-primary: theme-high-contrast.$color-button-primary,
+        $color-button-primary-hover: theme-high-contrast.$color-button-primary-hover,
+        $glyph-primary: theme-high-contrast.$glyph-primary,
+        $glyph-secondary: theme-high-contrast.$glyph-secondary,
+        $glyph-tertiary: theme-high-contrast.$glyph-tertiary,
+        $glyph-link: theme-high-contrast.$glyph-link,
+        $glyph-button-primary: theme-high-contrast.$glyph-button-primary
     ),
 );
 

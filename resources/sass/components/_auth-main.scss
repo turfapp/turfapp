@@ -22,31 +22,7 @@
 .ta\:auth main {
     padding: 100px 25px;
 
-    .ta\:info {
-        @include theming.themed() {
-            color: theming.t(theming.$glyph-primary);
-        }
-    }
-
-    .ta\:form {
-        border-radius: 18px;
-        padding: 17px;
-        box-sizing: border-box;
-
-        @include theming.themed() {
-            background-color: theming.t(theming.$color-secondary);
-        }
-    }
-
     @include breakpoints.small() {
         padding: 25px;
-
-        .ta\:info {
-            display: none;
-        }
-
-        .ta\:form {
-            border-radius: 8px;
-        }
     }
 }

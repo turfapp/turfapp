@@ -17,54 +17,14 @@
  */
 
 @use '../includes/theming';
+@use '../includes/breakpoints';
 
-body {
-    line-height: 1.42;
-    font-weight: 400;
-    letter-spacing: 0;
-    font-family: 'InterVariable',
-    'Helvetica Neue',
-    'Helvetica',
-    sans-serif;
-    font-style: normal;
-    font-synthesis: none;
-    direction: ltr;
-
+.ta\:auth .ta\:info-container {
     @include theming.themed() {
         color: theming.t(theming.$glyph-primary);
     }
-}
 
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.1;
-    font-weight: 500;
-    letter-spacing: 0;
-    font-family: 'InterVariable',
-    'Helvetica Neue',
-    'Helvetica',
-    'Arial',
-    sans-serif;
-    font-style: normal;
-}
-
-h2 {
-    font-size: 2.5rem;
-}
-
-a {
-    text-decoration: none;
-
-    @include theming.themed() {
-        color: theming.t(theming.$glyph-link);
-    }
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a:visited {
-    @include theming.themed() {
-        color: theming.t(theming.$glyph-link);
+    @include breakpoints.small() {
+        display: none;
     }
 }

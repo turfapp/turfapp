@@ -18,53 +18,28 @@
 
 @use '../includes/theming';
 
-body {
-    line-height: 1.42;
-    font-weight: 400;
-    letter-spacing: 0;
-    font-family: 'InterVariable',
-    'Helvetica Neue',
-    'Helvetica',
-    sans-serif;
-    font-style: normal;
-    font-synthesis: none;
-    direction: ltr;
+.ta\:button {
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1.1rem;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    min-width: 28px;
+    padding: 0.5em 1em;
+    border-radius: 9px;
+}
 
+.ta\:button-primary {
     @include theming.themed() {
-        color: theming.t(theming.$glyph-primary);
+        color: theming.t(theming.$glyph-button-primary);
+        background-color: theming.t(theming.$color-button-primary);
     }
-}
 
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.1;
-    font-weight: 500;
-    letter-spacing: 0;
-    font-family: 'InterVariable',
-    'Helvetica Neue',
-    'Helvetica',
-    'Arial',
-    sans-serif;
-    font-style: normal;
-}
-
-h2 {
-    font-size: 2.5rem;
-}
-
-a {
-    text-decoration: none;
-
-    @include theming.themed() {
-        color: theming.t(theming.$glyph-link);
-    }
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a:visited {
-    @include theming.themed() {
-        color: theming.t(theming.$glyph-link);
+    &:hover {
+        @include theming.themed() {
+            background-color: theming.t(theming.$color-button-primary-hover);
+        }
     }
 }

@@ -19,20 +19,32 @@
 @use '../includes/theming';
 
 .ta\:auth footer {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+
     @include theming.themed() {
-        background-color: theming.t(theming.$color-tertiary);
+        border-top: 2px solid theming.t(theming.$color-accent-secondary);
+        background-color: theming.t(theming.$color-secondary);
     }
 
     ul {
-        margin-left: 0;
-        padding-left: 100px;
-        padding-right: 100px;
+        display: flex;
+        gap: 15px;
         list-style-type: none;
+        padding-left: 0;
 
         li {
             margin-left: 0;
-            display: inline-block;
-            line-height: 100%;
+        }
+    }
+
+    a {
+        @include theming.themed() {
+            color: theming.t(theming.$glyph-secondary)
         }
     }
 }

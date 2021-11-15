@@ -16,10 +16,19 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@use '../includes/theming';
+.visible-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 
-.ta\:auth header {
-    @include theming.themed() {
-        background-color: theming.t(theming.$color-tertiary);
+    &:focus {
+        clip: auto;
+        height: auto;
+        overflow: auto;
+        position: absolute;
+        width: auto;
     }
 }
