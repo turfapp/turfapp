@@ -23,6 +23,19 @@
     padding: 0;
     margin: 0;
 
+    // Have the form fill the entire container, and align the last element
+    // to the bottom of the parent container
+    &.ta\:form-fill-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .ta\:form-group:last-child {
+            flex: none;
+        }
+    }
+
+    // Style any labels that appear above the input fields
     label {
         font-size: 0.75rem;
         margin-bottom: 8px;
@@ -30,6 +43,7 @@
         display: inline-block;
     }
 
+    // Style all text-like input fields (text, password, email, etc.)
     input[type="text"],
     input[type="password"],
     input[type="email"],
@@ -85,6 +99,10 @@
 
         &.ta\:form-text-error {
             color: #ff0033;
+        }
+
+        &.ta\:form-text-error {
+            color: #4bb543;
         }
     }
 }

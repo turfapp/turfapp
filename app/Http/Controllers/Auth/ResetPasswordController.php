@@ -53,7 +53,7 @@ class ResetPasswordController extends Controller
     {
         $token = $request->route()->parameter('token');
 
-        return $this->viewFactory->make('web.auth.reset')->with(
+        return $this->viewFactory->make('web.auth.reset-password')->with(
             ['token' => $token, 'email' => $request->email]
         );
     }

@@ -22,6 +22,9 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Notifications\ResetPassword as ResetPasswordNotification;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -45,11 +48,12 @@ use Laravel\Sanctum\HasApiTokens;
  * @property Collection receiverTurfLogs The log items where this user the "receiver"/"target"
  * @property Collection membershipsSorted The memberships belonging to this user sorted on "created_at" date
  */
-class User extends Authenticatable
+class User extends Authenticatable implements CanResetPasswordContract
 {
     use HasApiTokens;
     use HasFactory;
     use Notifiable;
+    use CanResetPassword;
 
     /**
      * The attributes that are mass assignable.
@@ -80,6 +84,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
+    }
 
     /**
      * Get the user's first name.

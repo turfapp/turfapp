@@ -122,8 +122,12 @@
     "About TurfApp": "Over TurfApp",
     "Go to the homepage": "Ga naar de homepage",
     "I agree to TurfApp's <a href=\":privacy_policy\">privacy policy</a>.": "Ik ga akkoord met <a href=\":privacy_policy\">het privacybeleid</a> van TurfApp.",
-    "Don't have an account yet?": "Heb je nog geen account?",
-    "Register now": "Registreer je nu",
+    "Don't have an account yet?": "Nog geen account?",
+    "Register now": "Registreer nu",
     "Already have an account?": "Heb je al een account?",
-    "Log in": "Inloggen"
+    "Log in": "Inloggen",
+    "Remember me": "Aangemeld blijven",
+    "Forgot your password?": "Wachtwoord vergeten?",
+    "Reset it": "Opnieuw instellen",
+    "Reset password": "Wachtwoord opnieuw instellen"
 }

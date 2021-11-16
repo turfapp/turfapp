@@ -5,7 +5,7 @@
 @endsection
 
 @section('form')
-    <form id="register" class="ta:form" aria-live="assertive" accept-charset="UTF-8" method="post" action="{{ route('auth.register') }}">
+    <form id="register" class="ta:form ta:form-fill-container" aria-live="assertive" accept-charset="UTF-8" method="post" action="{{ route('auth.register') }}">
         @csrf
         <div class="ta:form-group">
             <label for="account_name_field">{{ __('Name') }}</label>
