@@ -32,7 +32,7 @@ use Illuminate\View\View;
  *
  * @package App\Http\Requests
  */
-abstract class AppRequest extends Request
+abstract class AppRequest extends BaseRequest
 {
     /**
      * Constructs a base view for the current request. Will return a callable that takes a
@@ -44,8 +44,8 @@ abstract class AppRequest extends Request
      */
     public function view(ViewFactory $factory): callable
     {
-        return function (string $viewName) use ($factory): View {
-            return $factory->make($viewName)->with('logged_user', $this->user());
+        return function (string $viewName) use ($factory) {
+            return parent::view($factory)($viewName)->with('logged_user', $this->user());
         };
     }
 }

@@ -20,44 +20,23 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers;
-
-use App\Http\Requests\PublicRequest;
-use Illuminate\View\Factory as ViewFactory;
-use Illuminate\View\View;
+namespace App\Http\Requests;
 
 /**
- * Class IndexController
+ * Class PublicRequest
  *
- * This class is the controller for the route(s):
+ * This request is used for public routes, i.e. routes that do not require
+ * authentication to visit, such as the login page or the landing page.
  *
- * - /
- *
- * @package App\Http\Controllers
+ * @package App\Http\Requests
  */
-class IndexController extends Controller
+class PublicRequest extends BaseRequest
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * @inheritDoc
      */
-    public function __construct(ViewFactory $viewFactory)
+    public function authorizeAll(): bool
     {
-        $this->middleware('guest');
-
-        parent::__construct($viewFactory);
-    }
-
-    /**
-     * This function is called whenever a GET request is received on
-     * this route.
-     *
-     * @param PublicRequest $request
-     * @return View
-     */
-    public function view(PublicRequest $request): View
-    {
-        return $request->view($this->viewFactory)('web.index.index');
+        return true;
     }
 }

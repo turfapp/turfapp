@@ -31,7 +31,7 @@ use App\Http\Requests\AppRequest;
  *
  * - /app
  *
- * @package App\Http\Requests\App\Groups
+ * @package App\Http\Requests\App
  */
 class IndexRequest extends AppRequest
 {

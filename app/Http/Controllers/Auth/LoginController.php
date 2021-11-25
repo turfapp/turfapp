@@ -23,6 +23,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PublicRequest;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\View\Factory as ViewFactory;
 use Illuminate\View\View;
@@ -41,7 +42,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/app';
+    protected string $redirectTo = '/app';
 
     /**
      * Create a new controller instance.
@@ -58,10 +59,11 @@ class LoginController extends Controller
     /**
      * Show the application's login form.
      *
+     * @param PublicRequest $request
      * @return View
      */
-    public function view(): View
+    public function view(PublicRequest $request): View
     {
-        return $this->viewFactory->make('web.auth.login');
+        return $request->view($this->viewFactory)('web.auth.login');
     }
 }

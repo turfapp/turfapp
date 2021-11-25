@@ -23,12 +23,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PublicRequest;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Password;
-use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
 /**
@@ -43,11 +39,12 @@ class ForgotPasswordController extends Controller
     /**
      * Display the form to request a password reset link.
      *
+     * @param PublicRequest $request
      * @return View
      */
-    public function view(): View
+    public function view(PublicRequest $request): View
     {
-        return $this->viewFactory->make('web.auth.email-reset-link');
+        return $request->view($this->viewFactory)('web.auth.email-reset-link');
     }
 
     /**
@@ -55,8 +52,8 @@ class ForgotPasswordController extends Controller
      *
      * @return View
      */
-    public function showLinkRequestForm(): View
+    public function showLinkRequestForm(PublicRequest $request): View
     {
-        return $this->view();
+        return $this->view($request);
     }
 }

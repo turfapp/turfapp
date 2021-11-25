@@ -23,6 +23,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PublicRequest;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -44,7 +45,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/app';
+    protected string $redirectTo = '/app';
 
     /**
      * Create a new controller instance.
@@ -91,18 +92,19 @@ class RegisterController extends Controller
     /**
      * Show the application's registration form.
      *
+     * @param PublicRequest $request
      * @return View
      */
-    public function view(): View
+    public function view(PublicRequest $request): View
     {
-        return $this->viewFactory->make('web.auth.register');
+        return $request->view($this->viewFactory)('web.auth.register');
     }
 
     /**
      * @inheritDoc
      */
-    public function showRegistrationForm(): View
+    public function showRegistrationForm(PublicRequest $request): View
     {
-        return $this->view();
+        return $this->view($request);
     }
 }

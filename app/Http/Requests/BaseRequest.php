@@ -1,8 +1,8 @@
 <?php
 
 /*
- * TurfApp - An alternative for paper tally lists.
- * Copyright (C) 2021  Marijn van Wezel
+ * TurfApp - TurfApp - An alternative for paper tally lists.
+ *  Copyright (C) 2021  Marijn van Wezel
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,44 +20,33 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers;
+namespace App\Http\Requests;
 
-use App\Http\Requests\PublicRequest;
 use Illuminate\View\Factory as ViewFactory;
 use Illuminate\View\View;
 
 /**
- * Class IndexController
+ * Class BaseRequest
  *
- * This class is the controller for the route(s):
+ * This is the base class for all requests.
  *
- * - /
- *
- * @package App\Http\Controllers
+ * @package App\Http\Requests
  */
-class IndexController extends Controller
+abstract class BaseRequest extends Request
 {
     /**
-     * Create a new controller instance.
+     * Constructs a base view for the current request. Will return a callable that takes a
+     * view name and return a View object with the following parameter(s) already filled in:
      *
-     * @return void
-     */
-    public function __construct(ViewFactory $viewFactory)
-    {
-        $this->middleware('guest');
-
-        parent::__construct($viewFactory);
-    }
-
-    /**
-     * This function is called whenever a GET request is received on
-     * this route.
+     * - theme
      *
-     * @param PublicRequest $request
-     * @return View
+     * @return callable(string): View
      */
-    public function view(PublicRequest $request): View
+    public function view(ViewFactory $factory): callable
     {
-        return $request->view($this->viewFactory)('web.index.index');
+        return function (string $viewName) use ($factory): View {
+            // TODO: Make theme configurable
+            return $factory->make($viewName)->with('theme', 'light');
+        };
     }
 }
