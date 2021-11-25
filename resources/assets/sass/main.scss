@@ -16,8 +16,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@use 'vendors';
-@use 'base';
-@use 'layout';
-@use 'components';
-@use 'pages';
+@use 'vendors/index' as vendors;
+@use 'base/index' as base;
+@use 'layout/index' as layout;
+@use 'components/index' as components;
+@use 'pages/index' as pages;
