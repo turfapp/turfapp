@@ -18,8 +18,15 @@ mix.options({
  */
 
 // JavaScript assets
-mix.ts('resources/js/main.ts', 'public/static/js');
-mix.ts('resources/js/worker.ts', 'public/');
+mix.ts('resources/assets/js/main.ts', 'public/static/js/');
+mix.ts('resources/assets/js/worker.ts', 'public/');
 
 // Styling assets
-mix.sass('resources/sass/main.scss', 'public/static/css');
+mix.sass('resources/assets/sass/main.scss', 'public/static/css/');
+
+// Image and manifest assets
+mix.copyDirectory('resources/assets/manifest/', 'public/static/manifest/');
+mix.copyDirectory('resources/assets/images/', 'public/static/images/');
+
+// Include a special case for the favicon.ico, which must also be in root
+mix.copy('resources/assets/manifest/favicon.ico', 'public/');

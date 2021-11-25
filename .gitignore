@@ -2,9 +2,7 @@
 /node_modules
 /public/hot
 /public/storage
-/public/static/css
-/public/static/js
-/public/static/fonts
+/public/static
 /public/mix-manifest.json
 /public/worker.js
 /storage/*.key

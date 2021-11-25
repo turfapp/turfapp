@@ -11,6 +11,6 @@
         "strict": true
     },
     "include": [
-        "resources/js/*.ts"
+      "resources/assets/js/*.ts"
     ]
 }

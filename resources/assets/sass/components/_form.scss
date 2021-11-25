@@ -23,18 +23,6 @@
     padding: 0;
     margin: 0;
 
-    // Have the form fill the entire container, and align the last element
-    // to the bottom of the parent container
-    &.ta\:form-fill-container {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-
-        .ta\:form-group:last-child {
-            flex: none;
-        }
-    }
-
     // Style any labels that appear above the input fields
     label {
         font-size: 0.75rem;
@@ -101,7 +89,7 @@
             color: #ff0033;
         }
 
-        &.ta\:form-text-error {
+        &.ta\:form-text-success {
             color: #4bb543;
         }
     }
