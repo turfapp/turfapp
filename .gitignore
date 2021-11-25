@@ -5,6 +5,7 @@
 /public/static
 /public/mix-manifest.json
 /public/worker.js
+/public/favicon.ico
 /storage/*.key
 /vendor
 /.idea
