@@ -30,6 +30,11 @@ use Illuminate\View\View;
 /**
  * Class ResetPasswordController
  *
+ * This class is the controller for the route(s):
+ *
+ * - /auth/password/reset
+ * - /auth/password/reset/{token}
+ *
  * @package App\Http\Controllers\Auth
  */
 class ResetPasswordController extends Controller

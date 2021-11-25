@@ -31,6 +31,11 @@ use Illuminate\View\View;
 /**
  * Class LoginController
  *
+ * This class is the controller for the route(s):
+ *
+ * - /auth/login
+ * - /auth/logout
+ *
  * @package App\Http\Controllers\Auth
  */
 class LoginController extends Controller

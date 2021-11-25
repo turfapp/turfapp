@@ -34,6 +34,10 @@ use Illuminate\View\View;
 /**
  * Class RegisterController
  *
+ * This class is the controller for the route(s):
+ *
+ * - /auth/register
+ *
  * @package App\Http\Controllers\Auth
  */
 class RegisterController extends Controller

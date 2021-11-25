@@ -30,6 +30,11 @@ use Illuminate\View\View;
 /**
  * Class ForgotPasswordController
  *
+ * This class is the controller for the route(s):
+ *
+ * - /auth/password/reset
+ * - /auth/password/email
+ *
  * @package App\Http\Controllers\Auth
  */
 class ForgotPasswordController extends Controller
