@@ -133,5 +133,6 @@
     "Hello!": "Hallo!",
     "Reset your password": "Herstel je wachtwoord",
     "You are receiving this email because you requested a password reset for your TurfApp account.": "Je ontvangt deze e-mail omdat je hebt aangegeven het wachtwoord van je TurfApp-account opnieuw in te willen stellen.",
-    "Please go to the following page and choose a new password:": "Klik op de onderstaande link om een nieuw wachtwoord in te stellen:"
+    "Please go to the following page and choose a new password:": "Klik op de onderstaande link om een nieuw wachtwoord in te stellen:",
+    "This password reset link will expire in :count minutes.": "Deze link zal over :count minuten verlopen."
 }

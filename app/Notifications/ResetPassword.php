@@ -60,9 +60,11 @@ class ResetPassword extends ResetPasswordBaseNotification
      */
     public function buildMailMessage($url): MailMessage
     {
+        $expiresIn = config('auth.passwords.' . config('auth.defaults.passwords') . '.expire');
+
         return (new MailMessage())
             ->priority(2)
             ->subject(Lang::get('Reset your password'))
-            ->view('emails.auth.reset-password', ['url' => $url]);
+            ->view('emails.auth.reset-password', ['url' => $url, 'expires_in' => $expiresIn]);
     }
 }
