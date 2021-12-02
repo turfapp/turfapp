@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="ta:dark" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="ta:{{ $theme }}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @include('web._layout.head')
     </head>

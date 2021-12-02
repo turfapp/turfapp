@@ -25,6 +25,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PublicRequest;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\View\Factory as ViewFactory;
 use Illuminate\View\View;
 
 /**
@@ -49,6 +50,18 @@ class ResetPasswordController extends Controller
     protected string $redirectTo = '/app';
 
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(ViewFactory $viewFactory)
+    {
+        $this->middleware('guest');
+
+        parent::__construct($viewFactory);
+    }
+
+    /**
      * Show the application's password reset form.
      *
      * @param PublicRequest $request
@@ -59,12 +72,12 @@ class ResetPasswordController extends Controller
         $token = $request->route()->parameter('token');
 
         return $request->view($this->viewFactory)('web.auth.reset-password')->with(
-            ['token' => $token, 'email' => $request->email]
+            ['token' => $token, 'email' => $request->get('email')]
         );
     }
 
     /**
-     * @@inheritDoc
+     * @inheritDoc
      */
     public function showResetForm(PublicRequest $request): View
     {

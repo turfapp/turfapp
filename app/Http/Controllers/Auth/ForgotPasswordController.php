@@ -25,6 +25,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PublicRequest;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\View\Factory as ViewFactory;
 use Illuminate\View\View;
 
 /**
@@ -42,6 +43,18 @@ class ForgotPasswordController extends Controller
     use SendsPasswordResetEmails;
 
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(ViewFactory $viewFactory)
+    {
+        $this->middleware('guest');
+
+        parent::__construct($viewFactory);
+    }
+
+    /**
      * Display the form to request a password reset link.
      *
      * @param PublicRequest $request
@@ -55,6 +68,7 @@ class ForgotPasswordController extends Controller
     /**
      * Display the form to request a password reset link.
      *
+     * @param PublicRequest $request
      * @return View
      */
     public function showLinkRequestForm(PublicRequest $request): View

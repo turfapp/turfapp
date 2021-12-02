@@ -22,20 +22,20 @@ declare(strict_types=1);
 
 namespace App\Notifications;
 
+use App\Mail\StandardEmail;
 use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordBaseNotification;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Lang;
 
 /**
  * An alternate ResetPassword notification class that overrides the route name
- * in the "toMail" function.
+ * in the "toMail" function and provides localisation.
  */
 class ResetPassword extends ResetPasswordBaseNotification
 {
     /**
-     * Build the mail representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return MailMessage
+     * @inheritDoc
      */
     public function toMail($notifiable): MailMessage
     {
@@ -46,12 +46,23 @@ class ResetPassword extends ResetPasswordBaseNotification
         if (static::$createUrlCallback) {
             $url = call_user_func(static::$createUrlCallback, $notifiable, $this->token);
         } else {
-            $url = url(route('auth.password.reset', [
+            $url = url(route('auth.password.reset.token', [
                 'token' => $this->token,
                 'email' => $notifiable->getEmailForPasswordReset(),
             ], false));
         }
 
         return $this->buildMailMessage($url);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function buildMailMessage($url): MailMessage
+    {
+        return (new MailMessage())
+            ->priority(2)
+            ->subject(Lang::get('Reset your password'))
+            ->view('emails.auth.reset-password', ['url' => $url]);
     }
 }
